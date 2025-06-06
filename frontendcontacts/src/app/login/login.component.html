@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px;">
+    <h4 class="text-center mb-4">Iniciar sesión</h4>
+
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        [(ngModel)]="email"
+        placeholder="Ingresa tu correo"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="inputPassword" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        [(ngModel)]="password"
+        placeholder="Ingresa tu contraseña"
+      />
+    </div>
+
+    <div class="text-center mb-3">
+      <button class="btn btn-primary px-5" (click)="validateCredentials()">Iniciar sesión</button>
+    </div>
+
+    <div class="alert alert-danger text-center mb-0" role="alert" *ngIf="showError">
+      Error. Verifique los datos ingresados.
+    </div>
+  </div>
+</div>

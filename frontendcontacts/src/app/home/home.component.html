@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="w-100" style="max-width: 1000px;">
+
+    <h4 class="text-center mb-4">Contactos</h4>
+
+    <div class="card shadow-lg p-4">
+      <table class="table table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Teléfono Fijo</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contactsList">
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.landline }}</td>
+            <td>{{ contact.mobilePhone }}</td>
+            <td>{{ contact.email }}</td>
+            <td>
+              <button class="btn btn-link text-danger" (click)="deleteContact(contact._id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-secondary me-2" (click)="navigateToCreateContact()">Crear nuevo contacto</button>
+      <button class="btn btn-primary" (click)="logOut()">Cerrar sesión</button>
+    </div>
+
+  </div>
+</div>

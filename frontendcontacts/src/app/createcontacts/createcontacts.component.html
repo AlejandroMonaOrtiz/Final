@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center py-5">
+  <div class="w-100" style="max-width: 700px;">
+
+    <h4 class="text-center mb-4">Crear nuevo contacto</h4>
+
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-6 text-end">
+            <label for="inputName" class="form-label">Nombre del contacto</label>
+          </div>
+          <div class="col-6">
+            <input type="text" id="inputName" [(ngModel)]="name" class="form-control">
+          </div>
+
+          <div class="col-6 text-end">
+            <label for="inputLastName" class="form-label">Apellido del contacto</label>
+          </div>
+          <div class="col-6">
+            <input type="text" id="inputLastName" [(ngModel)]="lastName" class="form-control">
+          </div>
+
+          <div class="col-6 text-end">
+            <label for="inputLandline" class="form-label">Teléfono Fijo</label>
+          </div>
+          <div class="col-6">
+            <input type="number" id="inputLandline" [(ngModel)]="landline" class="form-control">
+          </div>
+
+          <div class="col-6 text-end">
+            <label for="inputMobilePhone" class="form-label">Celular</label>
+          </div>
+          <div class="col-6">
+            <input type="number" id="inputMobilePhone" [(ngModel)]="mobilePhone" class="form-control">
+          </div>
+
+          <div class="col-6 text-end">
+            <label for="inputEmail" class="form-label">Correo del contacto</label>
+          </div>
+          <div class="col-6">
+            <input type="email" id="inputEmail" [(ngModel)]="email" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-primary me-2" (click)="createContact()">Crear contacto</button>
+      <button class="btn btn-secondary" (click)="navigateToHome()">Volver al home</button>
+    </div>
+
+    <div class="mt-3">
+      <div class="alert alert-success text-center" role="alert" *ngIf="showSuccess">
+        El contacto se ha creado correctamente
+      </div>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="showError">
+        Error. Verifique los datos ingresados
+      </div>
+    </div>
+
+  </div>
+</div>
